@@ -45,7 +45,7 @@ public class Window {
         currentScene.init();
         break;
       default:
-        assert false: "Uknow Scene " + newScene;
+        assert false:"Uknow Scene " + newScene;
         break;
     }
   }
@@ -100,6 +100,13 @@ public class Window {
     Window.changeScene(0);
   }
 
+  public static Window getWindow() {
+    if (Window.window==null) {
+      Window.window = new Window();
+    }
+    return Window.window;
+  }
+
   public void loop() {
     float beginTime = Time.getTime();
     float endTime = Time.getTime();
@@ -125,4 +132,11 @@ public class Window {
     }
   }
 
+  public int getWidth() {
+    return this.width;
+  }
+
+  public int getHeight() {
+    return this.height;
+  }
 }
