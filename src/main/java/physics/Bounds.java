@@ -20,14 +20,14 @@ public abstract class Bounds extends Component {
   abstract public boolean raycast(Vector2f position);
 
   public static boolean checkCollision(Bounds b1, Bounds b2) {
-    if (b1.type==b2.type && b1.type==BoundsType.Box) {
+    if (b1.type == b2.type && b1.type == BoundsType.Box) {
       return BoxBounds.checkCollision((BoxBounds) b1, (BoxBounds) b2);
     }
     return false;
   }
 
   public static Collision resolveCollision(Bounds b1, Bounds b2) {
-    if (b1.type==BoundsType.Box && b2.type==BoundsType.Box) {
+    if (b1.type == BoundsType.Box && b2.type == BoundsType.Box) {
       BoxBounds b1Bounds = (BoxBounds) b1;
       return b1Bounds
     }
